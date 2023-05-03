@@ -41,11 +41,12 @@ export default function Home({ products }: HomeProps) {
           {products.map((product) => {
             return (
               <PlanCard
+                key={product.price.id}
                 name={product.name}
                 amount={product.price.amount}
                 stripeProductId={product.price.id}
                 imageURL="/plan_image.svg"
-                options={planOptions.silver}
+                options={planOptions}
               />
             );
           })}
